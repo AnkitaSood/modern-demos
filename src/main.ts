@@ -8,14 +8,15 @@ import {
   Routes,
   withViewTransitions,
 } from '@angular/router';
+import {MatButton} from '@angular/material/button';
 
 @Component({
-  imports: [RouterLink],
+  imports: [RouterLink, MatButton],
   template: `
     <main class="content">
       <h1 class="content-title">Page 1</h1>
       <p>This is the content for page 1.</p>
-      <button type="button" (click)="toggle()">Toggle Element</button>
+      <button mat-flat-button type="button" (click)="toggle()">Toggle Element</button>
       @if (isShown()) {
         <div class="insert-container" animate.enter="enter-animation" animate.leave="deleting">
           <p>The box is inserted</p></div>

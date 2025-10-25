@@ -1,0 +1,514 @@
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+}
+.main-header {
+  view-transition-name: main-header;
+  contain: layout;
+}
+
+.main-header-text {
+  view-transition-name: main-header-text;
+  contain: layout;
+  width: fit-content;
+}
+
+@media (min-width: 530px) {
+  .main-nav {
+    view-transition-name: main-nav;
+    contain: layout;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-to-right {
+  to {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+  300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+  300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+::view-transition-new(main-nav):only-child {
+  animation: 300ms cubic-bezier(0, 0, 0.2, 1) both fade-in,
+  300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+::view-transition-old(main-nav):only-child {
+  animation: 150ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+  300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-right;
+}
+:root {
+  --content-padding: 1.2rem;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.main-header {
+  align-items: center;
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+  contain: paint;
+  display: grid;
+  height: 54px;
+  padding: 0 var(--content-padding);
+}
+
+.back-and-title {
+  align-items: center;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: 31px 1fr;
+  color: inherit;
+  text-decoration: none;
+}
+
+.content {
+  padding: var(--content-padding);
+}
+
+.content-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+  max-width: 43ch;
+}
+
+.back-icon {
+  display: block;
+  fill: var(--mat-sys-on-primary-container);
+}
+
+.gallery {
+  display: grid;
+  gap: var(--content-padding);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.gallery > li {
+  display: block;
+  box-shadow: 0 5px 12px rgb(0 0 0 / 34%);
+}
+
+.gallery a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.square-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.square-gallery img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.gallery-item-title {
+  padding: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.banner-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1170px;
+}
+
+.banner-img {
+  display: block;
+  background: var(--mat-sys-secondary-container);
+}
+
+.content-alt {
+  background: #d4bbff;
+}
+
+.body-grid {
+  height: -webkit-fill-available;
+}
+
+.body-grid body {
+  height: 100vh;
+  height: -webkit-fill-available;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+}
+
+@media (min-width: 530px) {
+  .content-and-nav {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+  }
+}
+
+.main-nav {
+  background: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: block;
+}
+
+.main-nav li a {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.7rem;
+  padding: 1rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.main-nav li a::before {
+  content: '➡️';
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+  /* ===== PRIMARY COLOR TOKENS ===== */
+  --mat-sys-primary: #021E73;
+  --mat-sys-primary-container: #334299;
+  --mat-sys-on-primary: #F7F6F4;
+  --mat-sys-on-primary-container: #F7F6F4;
+
+  /* ===== SECONDARY COLOR TOKENS ===== */
+  --mat-sys-secondary: #0176F2;
+  --mat-sys-secondary-container: #4DA0F5;
+  --mat-sys-secondary-fixed: #A8D3FB;
+  --mat-sys-secondary-fixed-dim: #77BBF8;
+
+  --mat-sys-on-secondary: #F7F6F4;
+  --mat-sys-on-secondary-container: #001B33;
+  --mat-sys-on-secondary-fixed: #00121F;
+  --mat-sys-on-secondary-fixed-variant: #004A80;
+
+  /* ===== TERTIARY COLOR TOKENS ===== */
+  --mat-sys-tertiary: #FFD45A;
+  --mat-sys-tertiary-container: #FFDF88;
+  --mat-sys-tertiary-fixed: #FFF0C7;
+  --mat-sys-tertiary-fixed-dim: #FFE49F;
+
+  --mat-sys-on-tertiary: #21190A;
+  --mat-sys-on-tertiary-container: #32280E;
+  --mat-sys-on-tertiary-fixed: #1A1305;
+  --mat-sys-on-tertiary-fixed-variant: #6B5A2E;
+
+  /* ===== ERROR COLOR TOKENS ===== */
+  --mat-sys-error: #EA0406;
+  --mat-sys-error-container: #F04446;
+  --mat-sys-error-fixed: #FFB4AB;
+  --mat-sys-error-fixed-dim: #FF897D;
+
+  --mat-sys-on-error: #F7F6F4;
+  --mat-sys-on-error-container: #410002;
+  --mat-sys-on-error-fixed: #2D0001;
+  --mat-sys-on-error-fixed-variant: #930005;
+
+  /* ===== SURFACE COLOR TOKENS ===== */
+  --mat-sys-surface: #F7F6F4;
+  --mat-sys-surface-dim: #DDD9D7;
+  --mat-sys-surface-bright: #FFFFFF;
+  --mat-sys-surface-container: #EBE9E7;
+  --mat-sys-surface-container-low: #F1EFED;
+  --mat-sys-surface-container-lowest: #FFFFFF;
+  --mat-sys-surface-container-high: #E5E3E1;
+  --mat-sys-surface-container-highest: #DFD9D7;
+  --mat-sys-surface-variant: #E4E1DF;
+
+  --mat-sys-on-surface: #1C1B1A;
+  --mat-sys-on-surface-variant: #46443F;
+
+  /* ===== INVERSE COLOR TOKENS ===== */
+  --mat-sys-inverse-surface: #31302F;
+  --mat-sys-inverse-on-surface: #F4F0ED;
+  --mat-sys-inverse-primary: #A8C7FF;
+
+  /* ===== OUTLINE COLOR TOKENS ===== */
+  --mat-sys-outline: #76746F;
+  --mat-sys-outline-variant: #C8C5C0;
+
+  /* ===== BACKGROUND COLOR TOKENS ===== */
+  --mat-sys-background: #F7F6F4;
+  --mat-sys-on-background: #1C1B1A;
+
+  /* ===== SHADOW & SCRIM TOKENS ===== */
+  --mat-sys-shadow: #000000;
+  --mat-sys-scrim: #000000;
+
+  /* ===== NEUTRAL COLOR TOKENS ===== */
+  --mat-sys-neutral-10: #1C1B1A;
+  --mat-sys-neutral-20: #31302F;
+  --mat-sys-neutral-30: #484644;
+  --mat-sys-neutral-40: #5F5D5A;
+  --mat-sys-neutral-50: #787571;
+  --mat-sys-neutral-60: #928F8A;
+  --mat-sys-neutral-70: #ADA9A4;
+  --mat-sys-neutral-80: #C8C5C0;
+  --mat-sys-neutral-90: #E4E1DF;
+  --mat-sys-neutral-95: #F3F0ED;
+  --mat-sys-neutral-98: #FBF9F7;
+  --mat-sys-neutral-99: #FDFCFA;
+  --mat-sys-neutral-100: #FFFFFF;
+
+  /* ===== NEUTRAL VARIANT COLOR TOKENS ===== */
+  --mat-sys-neutral-variant-10: #1A1C1E;
+  --mat-sys-neutral-variant-20: #2F3133;
+  --mat-sys-neutral-variant-30: #464749;
+  --mat-sys-neutral-variant-40: #5E5E60;
+  --mat-sys-neutral-variant-50: #767779;
+  --mat-sys-neutral-variant-60: #909092;
+  --mat-sys-neutral-variant-70: #ABAAA5;
+  --mat-sys-neutral-variant-80: #C8C5C0;
+  --mat-sys-neutral-variant-90: #E4E1DF;
+  --mat-sys-neutral-variant-95: #F3F0ED;
+  --mat-sys-neutral-variant-98: #FBF9F7;
+  --mat-sys-neutral-variant-99: #FDFCFA;
+  --mat-sys-neutral-variant-100: #FFFFFF;
+}
+
+/* ===== DARK THEME OVERRIDES ===== */
+[data-theme="dark"],
+.dark-theme {
+  --mat-sys-primary: #A8C7FF;
+  --mat-sys-primary-container: #021E73;
+  --mat-sys-on-primary: #00295F;
+  --mat-sys-on-primary-container: #DDE9FF;
+
+  /* SECONDARY - Bright Blue adjusted */
+  --mat-sys-secondary: #77BBF8;
+  --mat-sys-secondary-container: #004A80;
+  --mat-sys-secondary-fixed: #D4E8FF;
+  --mat-sys-secondary-fixed-dim: #A8D3FB;
+
+  --mat-sys-on-secondary: #003354;
+  --mat-sys-on-secondary-container: #D4E8FF;
+  --mat-sys-on-secondary-fixed: #001B33;
+  --mat-sys-on-secondary-fixed-variant: #00396B;
+
+  /* TERTIARY - Golden Yellow adjusted */
+  --mat-sys-tertiary: #FFE49F;
+  --mat-sys-tertiary-container: #6B5A2E;
+  --mat-sys-tertiary-fixed: #FFF0C7;
+  --mat-sys-tertiary-fixed-dim: #FFD45A;
+
+  --mat-sys-on-tertiary: #433509;
+  --mat-sys-on-tertiary-container: #FFF0C7;
+  --mat-sys-on-tertiary-fixed: #1A1305;
+  --mat-sys-on-tertiary-fixed-variant: #544419;
+
+  /* ERROR - Richmond Red adjusted */
+  --mat-sys-error: #FFB4AB;
+  --mat-sys-error-container: #930005;
+  --mat-sys-error-fixed: #FFDAD6;
+  --mat-sys-error-fixed-dim: #FFB4AB;
+
+  --mat-sys-on-error: #690003;
+  --mat-sys-on-error-container: #FFDAD6;
+  --mat-sys-on-error-fixed: #410002;
+  --mat-sys-on-error-fixed-variant: #790004;
+
+  /* SURFACE */
+  --mat-sys-surface: #121212;
+  --mat-sys-surface-dim: #0A0A0A;
+  --mat-sys-surface-bright: #383838;
+  --mat-sys-surface-container: #1E1E1E;
+  --mat-sys-surface-container-low: #1A1A1A;
+  --mat-sys-surface-container-lowest: #0D0D0D;
+  --mat-sys-surface-container-high: #262626;
+  --mat-sys-surface-container-highest: #313131;
+  --mat-sys-surface-variant: #46443F;
+
+  --mat-sys-on-surface: #E7E2DF;
+  --mat-sys-on-surface-variant: #C8C5C0;
+
+  /* INVERSE */
+  --mat-sys-inverse-surface: #E7E2DF;
+  --mat-sys-inverse-on-surface: #31302F;
+  --mat-sys-inverse-primary: #021E73;
+
+  /* OUTLINE */
+  --mat-sys-outline: #928F8A;
+  --mat-sys-outline-variant: #46443F;
+
+  /* BACKGROUND */
+  --mat-sys-background: #121212;
+  --mat-sys-on-background: #E7E2DF;
+
+  /* SHADOW & SCRIM */
+  --mat-sys-shadow: #000000;
+  --mat-sys-scrim: #000000;
+}
+
+/* ===== STATE LAYER OPACITY TOKENS ===== */
+:root {
+  --mat-sys-dragged-state-layer-opacity: .16;
+  --mat-sys-focus-state-layer-opacity: .12;
+  --mat-sys-hover-state-layer-opacity: .08;
+  --mat-sys-pressed-state-layer-opacity: .12;
+}
+
+/* ===== ELEVATION TOKENS ===== */
+:root {
+  --mat-sys-elevation-level0: none;
+  --mat-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --mat-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --mat-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --mat-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+  --mat-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== TYPOGRAPHY TOKENS =====*/
+:root {
+  --mat-sys-body-large: 400 1rem / 1.5rem Roboto;
+  --mat-sys-body-large-font: Roboto;
+  --mat-sys-body-large-line-height: 1.5rem;
+  --mat-sys-body-large-size: 1rem;
+  --mat-sys-body-large-tracking: .031rem;
+  --mat-sys-body-large-weight: 400;
+  --mat-sys-body-medium: 400 .875rem / 1.25rem Roboto;
+  --mat-sys-body-medium-font: Roboto;
+  --mat-sys-body-medium-line-height: 1.25rem;
+  --mat-sys-body-medium-size: .875rem;
+  --mat-sys-body-medium-tracking: .016rem;
+  --mat-sys-body-medium-weight: 400;
+  --mat-sys-body-small: 400 .75rem / 1rem Roboto;
+  --mat-sys-body-small-font: Roboto;
+  --mat-sys-body-small-line-height: 1rem;
+  --mat-sys-body-small-size: .75rem;
+  --mat-sys-body-small-tracking: .025rem;
+  --mat-sys-body-small-weight: 400;
+  --mat-sys-display-large: 400 3.562rem / 4rem Roboto;
+  --mat-sys-display-large-font: Roboto;
+  --mat-sys-display-large-line-height: 4rem;
+  --mat-sys-display-large-size: 3.562rem;
+  --mat-sys-display-large-tracking: -.016rem;
+  --mat-sys-display-large-weight: 400;
+  --mat-sys-display-medium: 400 2.812rem / 3.25rem Roboto;
+  --mat-sys-display-medium-font: Roboto;
+  --mat-sys-display-medium-line-height: 3.25rem;
+  --mat-sys-display-medium-size: 2.812rem;
+  --mat-sys-display-medium-tracking: 0;
+  --mat-sys-display-medium-weight: 400;
+  --mat-sys-display-small: 400 2.25rem / 2.75rem Roboto;
+  --mat-sys-display-small-font: Roboto;
+  --mat-sys-display-small-line-height: 2.75rem;
+  --mat-sys-display-small-size: 2.25rem;
+  --mat-sys-display-small-tracking: 0;
+  --mat-sys-display-small-weight: 400;
+  --mat-sys-headline-large: 400 2rem / 2.5rem Roboto;
+  --mat-sys-headline-large-font: Roboto;
+  --mat-sys-headline-large-line-height: 2.5rem;
+  --mat-sys-headline-large-size: 2rem;
+  --mat-sys-headline-large-tracking: 0;
+  --mat-sys-headline-large-weight: 400;
+  --mat-sys-headline-medium: 400 1.75rem / 2.25rem Roboto;
+  --mat-sys-headline-medium-font: Roboto;
+  --mat-sys-headline-medium-line-height: 2.25rem;
+  --mat-sys-headline-medium-size: 1.75rem;
+  --mat-sys-headline-medium-tracking: 0;
+  --mat-sys-headline-medium-weight: 400;
+  --mat-sys-headline-small: 400 1.5rem / 2rem Roboto;
+  --mat-sys-headline-small-font: Roboto;
+  --mat-sys-headline-small-line-height: 2rem;
+  --mat-sys-headline-small-size: 1.5rem;
+  --mat-sys-headline-small-tracking: 0;
+  --mat-sys-headline-small-weight: 400;
+  --mat-sys-label-large: 500 .875rem / 1.25rem Roboto;
+  --mat-sys-label-large-font: Roboto;
+  --mat-sys-label-large-line-height: 1.25rem;
+  --mat-sys-label-large-size: .875rem;
+  --mat-sys-label-large-tracking: .006rem;
+  --mat-sys-label-large-weight: 500;
+  --mat-sys-label-large-weight-prominent: 700;
+  --mat-sys-label-medium: 500 .75rem / 1rem Roboto;
+  --mat-sys-label-medium-font: Roboto;
+  --mat-sys-label-medium-line-height: 1rem;
+  --mat-sys-label-medium-size: .75rem;
+  --mat-sys-label-medium-tracking: .031rem;
+  --mat-sys-label-medium-weight: 500;
+  --mat-sys-label-medium-weight-prominent: 700;
+  --mat-sys-label-small: 500 .688rem / 1rem Roboto;
+  --mat-sys-label-small-font: Roboto;
+  --mat-sys-label-small-line-height: 1rem;
+  --mat-sys-label-small-size: .688rem;
+  --mat-sys-label-small-tracking: .031rem;
+  --mat-sys-label-small-weight: 500;
+  --mat-sys-title-large: 400 1.375rem / 1.75rem Roboto;
+  --mat-sys-title-large-font: Roboto;
+  --mat-sys-title-large-line-height: 1.75rem;
+  --mat-sys-title-large-size: 1.375rem;
+  --mat-sys-title-large-tracking: 0;
+  --mat-sys-title-large-weight: 400;
+  --mat-sys-title-medium: 500 1rem / 1.5rem Roboto;
+  --mat-sys-title-medium-font: Roboto;
+  --mat-sys-title-medium-line-height: 1.5rem;
+  --mat-sys-title-medium-size: 1rem;
+  --mat-sys-title-medium-tracking: .009rem;
+  --mat-sys-title-medium-weight: 500;
+  --mat-sys-title-small: 500 .875rem / 1.25rem Roboto;
+  --mat-sys-title-small-font: Roboto;
+  --mat-sys-title-small-line-height: 1.25rem;
+  --mat-sys-title-small-size: .875rem;
+  --mat-sys-title-small-tracking: .006rem;
+  --mat-sys-title-small-weight: 500;
+}
