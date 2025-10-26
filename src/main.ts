@@ -13,7 +13,7 @@ import {App} from './app/app';
   imports: [RouterLink, MatButton],
   template: `
     <main class="content">
-      <h1 class="content-title">Page 1</h1>
+      <h1 class="headline-large">Page 1</h1>
       <p>This is the content for page 1.</p>
       <button mat-flat-button type="button" (click)="toggle()">Toggle Element</button>
       @if (isShown()) {
@@ -68,7 +68,7 @@ export class Page1 {
   template: `
      <div class="content-and-nav">
       <main class="content">
-        <h1 class="content-title">Page 2</h1>
+        <h1 class="headline-large">Page 2</h1>
         <p>This is the content for page 2.</p>
         <ol>
           <li>It</li>
@@ -96,7 +96,7 @@ export class Page2 {}
   template: `
     <div class="content-and-nav">
       <main class="content">
-        <h1 class="content-title">Page 3</h1>
+        <h1 class="headline-large">Page 3</h1>
         <p>This is the content for page 3.</p>
         <p>And that's it!</p>
       </main>
