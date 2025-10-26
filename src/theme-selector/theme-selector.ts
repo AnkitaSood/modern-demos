@@ -1,12 +1,12 @@
 import {afterEveryRender, Component, computed, DOCUMENT, inject} from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
+import {MatFabButton} from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { ThemeService } from './theme.service';
 
 @Component({
   selector: 'app-theme-selector',
-  imports: [MatIconButton, MatIcon],
-  template:`<button matIconButton (click)="toggleTheme()">
+  imports: [ MatIcon, MatFabButton],
+  template:`<button matFab (click)="toggleTheme()">
    <mat-icon [fontIcon]="currentTheme() === 'dark' ? 'dark_mode' : 'light_mode'"/>
     </button>`
 })
