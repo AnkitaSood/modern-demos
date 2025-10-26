@@ -21,6 +21,6 @@ import {MatIcon} from '@angular/material/icon';
   <router-outlet/>
   `,
 })
-export class App {
+export class AppRoot {
   router = inject(Router);
 }
