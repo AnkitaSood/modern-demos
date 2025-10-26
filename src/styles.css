@@ -1,10 +1,12 @@
+@import url("global-styles/themes.css");
+
 body {
-  color-scheme: light;
+  color-scheme: dark light;
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
 }
+
 .main-header {
   view-transition-name: main-header;
   contain: layout;
@@ -89,7 +91,8 @@ body {
   background: var(--mat-sys-primary-container);
   color: var(--mat-sys-on-primary-container);
   contain: paint;
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   height: 54px;
   padding: 0 var(--content-padding);
 }
@@ -222,182 +225,6 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-:root {
-  /* ===== PRIMARY COLOR TOKENS ===== */
-  --mat-sys-primary: #021E73;
-  --mat-sys-primary-container: #334299;
-  --mat-sys-on-primary: #F7F6F4;
-  --mat-sys-on-primary-container: #F7F6F4;
-
-  /* ===== SECONDARY COLOR TOKENS ===== */
-  --mat-sys-secondary: #0176F2;
-  --mat-sys-secondary-container: #4DA0F5;
-  --mat-sys-secondary-fixed: #A8D3FB;
-  --mat-sys-secondary-fixed-dim: #77BBF8;
-
-  --mat-sys-on-secondary: #F7F6F4;
-  --mat-sys-on-secondary-container: #001B33;
-  --mat-sys-on-secondary-fixed: #00121F;
-  --mat-sys-on-secondary-fixed-variant: #004A80;
-
-  /* ===== TERTIARY COLOR TOKENS ===== */
-  --mat-sys-tertiary: #FFD45A;
-  --mat-sys-tertiary-container: #FFDF88;
-  --mat-sys-tertiary-fixed: #FFF0C7;
-  --mat-sys-tertiary-fixed-dim: #FFE49F;
-
-  --mat-sys-on-tertiary: #21190A;
-  --mat-sys-on-tertiary-container: #32280E;
-  --mat-sys-on-tertiary-fixed: #1A1305;
-  --mat-sys-on-tertiary-fixed-variant: #6B5A2E;
-
-  /* ===== ERROR COLOR TOKENS ===== */
-  --mat-sys-error: #EA0406;
-  --mat-sys-error-container: #F04446;
-  --mat-sys-error-fixed: #FFB4AB;
-  --mat-sys-error-fixed-dim: #FF897D;
-
-  --mat-sys-on-error: #F7F6F4;
-  --mat-sys-on-error-container: #410002;
-  --mat-sys-on-error-fixed: #2D0001;
-  --mat-sys-on-error-fixed-variant: #930005;
-
-  /* ===== SURFACE COLOR TOKENS ===== */
-  --mat-sys-surface: #F7F6F4;
-  --mat-sys-surface-dim: #DDD9D7;
-  --mat-sys-surface-bright: #FFFFFF;
-  --mat-sys-surface-container: #EBE9E7;
-  --mat-sys-surface-container-low: #F1EFED;
-  --mat-sys-surface-container-lowest: #FFFFFF;
-  --mat-sys-surface-container-high: #E5E3E1;
-  --mat-sys-surface-container-highest: #DFD9D7;
-  --mat-sys-surface-variant: #E4E1DF;
-
-  --mat-sys-on-surface: #1C1B1A;
-  --mat-sys-on-surface-variant: #46443F;
-
-  /* ===== INVERSE COLOR TOKENS ===== */
-  --mat-sys-inverse-surface: #31302F;
-  --mat-sys-inverse-on-surface: #F4F0ED;
-  --mat-sys-inverse-primary: #A8C7FF;
-
-  /* ===== OUTLINE COLOR TOKENS ===== */
-  --mat-sys-outline: #76746F;
-  --mat-sys-outline-variant: #C8C5C0;
-
-  /* ===== BACKGROUND COLOR TOKENS ===== */
-  --mat-sys-background: #F7F6F4;
-  --mat-sys-on-background: #1C1B1A;
-
-  /* ===== SHADOW & SCRIM TOKENS ===== */
-  --mat-sys-shadow: #000000;
-  --mat-sys-scrim: #000000;
-
-  /* ===== NEUTRAL COLOR TOKENS ===== */
-  --mat-sys-neutral-10: #1C1B1A;
-  --mat-sys-neutral-20: #31302F;
-  --mat-sys-neutral-30: #484644;
-  --mat-sys-neutral-40: #5F5D5A;
-  --mat-sys-neutral-50: #787571;
-  --mat-sys-neutral-60: #928F8A;
-  --mat-sys-neutral-70: #ADA9A4;
-  --mat-sys-neutral-80: #C8C5C0;
-  --mat-sys-neutral-90: #E4E1DF;
-  --mat-sys-neutral-95: #F3F0ED;
-  --mat-sys-neutral-98: #FBF9F7;
-  --mat-sys-neutral-99: #FDFCFA;
-  --mat-sys-neutral-100: #FFFFFF;
-
-  /* ===== NEUTRAL VARIANT COLOR TOKENS ===== */
-  --mat-sys-neutral-variant-10: #1A1C1E;
-  --mat-sys-neutral-variant-20: #2F3133;
-  --mat-sys-neutral-variant-30: #464749;
-  --mat-sys-neutral-variant-40: #5E5E60;
-  --mat-sys-neutral-variant-50: #767779;
-  --mat-sys-neutral-variant-60: #909092;
-  --mat-sys-neutral-variant-70: #ABAAA5;
-  --mat-sys-neutral-variant-80: #C8C5C0;
-  --mat-sys-neutral-variant-90: #E4E1DF;
-  --mat-sys-neutral-variant-95: #F3F0ED;
-  --mat-sys-neutral-variant-98: #FBF9F7;
-  --mat-sys-neutral-variant-99: #FDFCFA;
-  --mat-sys-neutral-variant-100: #FFFFFF;
-}
-
-/* ===== DARK THEME OVERRIDES ===== */
-[data-theme="dark"],
-.dark-theme {
-  --mat-sys-primary: #A8C7FF;
-  --mat-sys-primary-container: #021E73;
-  --mat-sys-on-primary: #00295F;
-  --mat-sys-on-primary-container: #DDE9FF;
-
-  /* SECONDARY - Bright Blue adjusted */
-  --mat-sys-secondary: #77BBF8;
-  --mat-sys-secondary-container: #004A80;
-  --mat-sys-secondary-fixed: #D4E8FF;
-  --mat-sys-secondary-fixed-dim: #A8D3FB;
-
-  --mat-sys-on-secondary: #003354;
-  --mat-sys-on-secondary-container: #D4E8FF;
-  --mat-sys-on-secondary-fixed: #001B33;
-  --mat-sys-on-secondary-fixed-variant: #00396B;
-
-  /* TERTIARY - Golden Yellow adjusted */
-  --mat-sys-tertiary: #FFE49F;
-  --mat-sys-tertiary-container: #6B5A2E;
-  --mat-sys-tertiary-fixed: #FFF0C7;
-  --mat-sys-tertiary-fixed-dim: #FFD45A;
-
-  --mat-sys-on-tertiary: #433509;
-  --mat-sys-on-tertiary-container: #FFF0C7;
-  --mat-sys-on-tertiary-fixed: #1A1305;
-  --mat-sys-on-tertiary-fixed-variant: #544419;
-
-  /* ERROR - Richmond Red adjusted */
-  --mat-sys-error: #FFB4AB;
-  --mat-sys-error-container: #930005;
-  --mat-sys-error-fixed: #FFDAD6;
-  --mat-sys-error-fixed-dim: #FFB4AB;
-
-  --mat-sys-on-error: #690003;
-  --mat-sys-on-error-container: #FFDAD6;
-  --mat-sys-on-error-fixed: #410002;
-  --mat-sys-on-error-fixed-variant: #790004;
-
-  /* SURFACE */
-  --mat-sys-surface: #121212;
-  --mat-sys-surface-dim: #0A0A0A;
-  --mat-sys-surface-bright: #383838;
-  --mat-sys-surface-container: #1E1E1E;
-  --mat-sys-surface-container-low: #1A1A1A;
-  --mat-sys-surface-container-lowest: #0D0D0D;
-  --mat-sys-surface-container-high: #262626;
-  --mat-sys-surface-container-highest: #313131;
-  --mat-sys-surface-variant: #46443F;
-
-  --mat-sys-on-surface: #E7E2DF;
-  --mat-sys-on-surface-variant: #C8C5C0;
-
-  /* INVERSE */
-  --mat-sys-inverse-surface: #E7E2DF;
-  --mat-sys-inverse-on-surface: #31302F;
-  --mat-sys-inverse-primary: #021E73;
-
-  /* OUTLINE */
-  --mat-sys-outline: #928F8A;
-  --mat-sys-outline-variant: #46443F;
-
-  /* BACKGROUND */
-  --mat-sys-background: #121212;
-  --mat-sys-on-background: #E7E2DF;
-
-  /* SHADOW & SCRIM */
-  --mat-sys-shadow: #000000;
-  --mat-sys-scrim: #000000;
-}
 
 /* ===== STATE LAYER OPACITY TOKENS ===== */
 :root {
