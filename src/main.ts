@@ -9,6 +9,7 @@ import {
   withViewTransitions,
 } from '@angular/router';
 import {MatButton} from '@angular/material/button';
+import {ThemeSelector} from './theme-selector/theme-selector';
 
 @Component({
   imports: [RouterLink, MatButton],
@@ -115,7 +116,7 @@ export class Page3 {}
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, ThemeSelector],
   template: `
    <header class="main-header">
       @if (router.url !== '/') {
@@ -126,8 +127,9 @@ export class Page3 {}
       } @else {
         <span class="main-header-text">Demo site</span>
       }
+     <app-theme-selector/>
   </header>
-  <router-outlet></router-outlet>
+  <router-outlet/>
   `,
 })
 export class App {
