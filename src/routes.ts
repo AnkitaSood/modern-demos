@@ -1,5 +1,5 @@
 import {Routes} from '@angular/router';
-import {Page1} from './components/page-1';
+import {Page1} from './components/page-1/page-1';
 import {Page2} from './components/page-2';
 import {Page3} from './components/page-3';
 
