@@ -11,5 +11,6 @@
 
   a {
     color: var(--mat-sys-primary);
+    font-weight: 500;
   }
 }
