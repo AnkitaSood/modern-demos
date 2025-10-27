@@ -1,0 +1,7 @@
+@import url("../custom-vars/tokens.css");
+
+@layer layout {
+  .content {
+    padding: var(--content-padding);
+  }
+}

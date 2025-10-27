@@ -20,6 +20,17 @@ import {MatIcon} from '@angular/material/icon';
   </header>
   <router-outlet/>
   `,
+  styles: `
+    .main-header {
+      align-items: center;
+      background: var(--mat-sys-primary-container);
+      color: var(--mat-sys-on-primary-container);
+      contain: paint;
+      display: flex;
+      justify-content: space-between;
+      height: 54px;
+      padding: 0 var(--content-padding);
+    }`
 })
 export class AppRoot {
   router = inject(Router);
