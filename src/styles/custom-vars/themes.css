@@ -1,4 +1,4 @@
-.light-theme {
+.dark-theme {
   --mat-sys-primary: #A8C7FF;
   --mat-sys-primary-container: #021E73;
   --mat-sys-on-primary: #00295F;
@@ -69,7 +69,7 @@
   --mat-sys-scrim: #000000;
 }
 
-.dark-theme {
+.light-theme {
   /* ===== PRIMARY COLOR TOKENS ===== */
   --mat-sys-primary: #021E73;
   --mat-sys-primary-container: #334299;
